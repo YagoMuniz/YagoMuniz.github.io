@@ -1,63 +1,29 @@
 <!DOCTYPE html>
 
-<html>
+<html ng-app="sitePessoal">
 	<head>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="script" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="styles/all.css">
 		<link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
 		<title>Yago Muniz</title>
 	</head>
-	<body>
+	<body ng-controller="mainController">
 		<header>
-			<img id="img-cabecalho" class="profile-picture">
-			<h1 id="nome-cabecalho"></h1>
-			<h2 id="cargo-cabecalho"></h2>	
+			<img ng-src="{{ img }}" class="profile-picture">
+			<h1>{{ nome }}</h1>
+			<h2>{{ cargo }}</h2>
 		</header>
-	
-		<section>
-			<div>
-				<span></span>
-				<h1>Resumo</h1>
-				<div>
-					<p>
-						Graduando em Sistemas de Informação, atualmente no 2º período. Concluinte Eletrônia na Escola Técnica Redentorista, Técnico em TI na Escola Virgem de Lourdes.
-					</p>
-				</div>
-			</div>
-		</section>
-		<section>
-			<div>
-				<span></span>
-				<h1>Habilidades</h1>
-				<div>
-					<p>
-						<ul>
-							<li>C/C++ (Desktop);</li>
-							<li>Java (Desktop e Mobile);</li>
-							<li>Python (Desktop e Web);</li>
-							<li>Golang (Web);</li>
-							<li>C# (Desktop e Mobile);</li>
-						</ul>	
-					</p>
-				</div>
-			</div>
-		</section>
-		<section>
-			<div>
-				<span></span>
-				<h1>Experiência</h1>
-				<div>
-					<p>
-						Experiência como técnico em telecomunicações na empresa Ensel Engenharias, São Paulo - SP, service-desk na empresa Softcom, Campina Grande - PB e desenvolvedor de software na empresa Factory Software.
-					</p>
-				</div>
-			</div>
-		</section>
+
+		<ng-view></ng-view>
+
 		<footer>
-			Copyright &copy; Yago Muniz - 2017
+			Copyright &copy; Yago Muniz - {{ ano }}
 		</footer>
-		<script src="script.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+		<!-- Scripts -->
+		<script src="scripts/app.js"></script>
+		<script src="scripts/app.config.js"></script>
 	</body>
 </html>
